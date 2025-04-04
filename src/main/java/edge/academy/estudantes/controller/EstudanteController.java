@@ -1,5 +1,6 @@
 package edge.academy.estudantes.controller;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Map;
 
@@ -52,17 +53,31 @@ public class EstudanteController {
     }
 
     @PostMapping("/filter")
-    @Operation(summary = "Retorna as informações dos estudantes de uma ou mais turmas")
+    @Operation(summary = "Filtra os estudantes e retorna as informações")
     public PagedModel<EstudanteResponseDto> findAll(Pageable pageable, @RequestBody EstudanteFilterDto dto) {
-        Specification<Estudante> spec = Specification.where(null), tmp;
+        var specs = new ArrayList<Specification<Estudante>>();
+
         if (dto.turmas() != null && !dto.turmas().isEmpty()) {
+            Specification<Estudante> spec = Specification.where(null), tmp;
             for (var turma : dto.turmas()) {
                 tmp = (root, query, builder) -> builder.equal(root.get("turma"), turma);
                 spec = tmp.or(spec);
             }
+
+            specs.add(spec);
         }
 
-        var estudantes = this.estudanteService.findBySpecification(spec, pageable);
+        if (dto.cursos() != null && !dto.cursos().isEmpty()) {
+            Specification<Estudante> spec = Specification.where(null), tmp;
+            for (var curso : dto.cursos()) {
+                tmp = (root, query, builder) -> builder.equal(root.get("curso"), curso);
+                spec = tmp.or(spec);
+            }
+
+            specs.add(spec);
+        }
+
+        var estudantes = this.estudanteService.findBySpecification(Specification.allOf(specs), pageable);
         return new PagedModel<>(estudantes.map(this.estudanteMapper::entityToResponseDto));
     }
 
