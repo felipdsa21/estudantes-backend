@@ -1,8 +1,8 @@
-package edge.academy.estudantes.dto;
+package com.example.estudantes.dto;
 
 import java.util.Set;
 
-import edge.academy.estudantes.domain.Curso;
+import com.example.estudantes.domain.Curso;
 
 public record EstudanteFilterDto(Set<Curso> cursos, Set<Integer> turmas) {
 }

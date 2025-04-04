@@ -1,10 +1,10 @@
-package edge.academy.estudantes.utils;
+package com.example.estudantes.utils;
 
 import java.util.List;
 
-import edge.academy.estudantes.domain.Estudante;
-import edge.academy.estudantes.dto.EstudanteDto;
-import edge.academy.estudantes.dto.EstudanteResponseDto;
+import com.example.estudantes.domain.Estudante;
+import com.example.estudantes.dto.EstudanteDto;
+import com.example.estudantes.dto.EstudanteResponseDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;

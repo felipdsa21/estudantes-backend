@@ -1,8 +1,8 @@
-package edge.academy.estudantes.dto;
+package com.example.estudantes.dto;
 
 import java.time.YearMonth;
 
-import edge.academy.estudantes.domain.Curso;
+import com.example.estudantes.domain.Curso;
 
 public record EstudanteDto(
     String nome, String email, Curso curso, int turma, int periodoAtual, YearMonth dataDeIngresso

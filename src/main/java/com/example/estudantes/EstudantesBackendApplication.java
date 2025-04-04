@@ -1,4 +1,4 @@
-package edge.academy.estudantes;
+package com.example.estudantes;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

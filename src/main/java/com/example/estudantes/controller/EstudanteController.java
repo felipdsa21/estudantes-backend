@@ -1,15 +1,15 @@
-package edge.academy.estudantes.controller;
+package com.example.estudantes.controller;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Map;
 
-import edge.academy.estudantes.domain.Estudante;
-import edge.academy.estudantes.dto.EstudanteDto;
-import edge.academy.estudantes.dto.EstudanteFilterDto;
-import edge.academy.estudantes.dto.EstudanteResponseDto;
-import edge.academy.estudantes.service.EstudanteService;
-import edge.academy.estudantes.utils.EstudanteMapper;
+import com.example.estudantes.domain.Estudante;
+import com.example.estudantes.dto.EstudanteDto;
+import com.example.estudantes.dto.EstudanteFilterDto;
+import com.example.estudantes.dto.EstudanteResponseDto;
+import com.example.estudantes.service.EstudanteService;
+import com.example.estudantes.utils.EstudanteMapper;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.data.domain.Pageable;

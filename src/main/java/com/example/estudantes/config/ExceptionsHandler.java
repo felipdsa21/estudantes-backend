@@ -1,4 +1,4 @@
-package edge.academy.estudantes.config;
+package com.example.estudantes.config;
 
 import java.io.IOException;
 import java.util.NoSuchElementException;

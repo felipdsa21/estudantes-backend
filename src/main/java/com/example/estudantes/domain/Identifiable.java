@@ -1,4 +1,4 @@
-package edge.academy.estudantes.domain;
+package com.example.estudantes.domain;
 
 public interface Identifiable {
     Integer getId();
