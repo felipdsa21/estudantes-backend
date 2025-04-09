@@ -8,13 +8,12 @@ plugins {
     id("net.ltgt.errorprone") version "4.1.0"
 }
 
-group = "edge.academy"
+group = "com.example"
 version = "0.0.1-SNAPSHOT"
 
 java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(23)
-    }
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
 }
 
 configurations {
@@ -44,4 +43,5 @@ tasks.withType<JavaCompile> {
         arrayOf("-Xlint", "-Amapstruct.defaultComponentModel=spring", "-Amapstruct.unmappedTargetPolicy=ERROR")
     )
     options.errorprone.excludedPaths = ".*/build/.*MapperImpl\\.java"
+    options.release = 21
 }
